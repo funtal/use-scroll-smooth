@@ -1,6 +1,6 @@
 # <center> Welcome to use-scroll-smooth 👋 </center>
 
-## _A gentle way of handling breakpoints in javascript_
+## _React hook which gives a smooth scrolling functions (wrapper for smooth-scroll library)_
 
 [![alt Version](https://img.shields.io/npm/v/use-scroll-smooth?color=blue)](https://www.npmjs.com/package/use-scroll-smooth) [![alt License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#)
 [![alt Twitter: twitter.com/WojtasinskiPawe](https://img.shields.io/twitter/follow/WojtasinskiPawe.svg?style=social)](https://twitter.com/WojtasinskiPawe)
