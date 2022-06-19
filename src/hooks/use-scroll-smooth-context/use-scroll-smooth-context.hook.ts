@@ -1,7 +1,6 @@
 import { useContext } from 'react';
 
 import { ScrollSmoothContext } from '../../context';
-
 import { defaultScrollSmoothContextValue } from './use-scroll-smooth-context.defaults';
 
 export const useSmoothScrollContext = () => {
@@ -9,7 +8,5 @@ export const useSmoothScrollContext = () => {
 
   const hasContextOptions = Object.keys(smoothScrollContext?.options || {}).length > 0;
 
-  const parsedContext = hasContextOptions ? smoothScrollContext : defaultScrollSmoothContextValue;
-
-  return parsedContext;
+  return hasContextOptions ? smoothScrollContext : defaultScrollSmoothContextValue;
 };
