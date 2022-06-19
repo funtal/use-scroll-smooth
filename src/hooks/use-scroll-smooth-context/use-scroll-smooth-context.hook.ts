@@ -7,12 +7,9 @@ import { defaultScrollSmoothContextValue } from './use-scroll-smooth-context.def
 export const useSmoothScrollContext = () => {
   const smoothScrollContext = useContext(ScrollSmoothContext);
 
-  const hasContextOptions =
-    Object.keys(smoothScrollContext?.options || {}).length > 0;
+  const hasContextOptions = Object.keys(smoothScrollContext?.options || {}).length > 0;
 
-  const parsedContext = hasContextOptions
-    ? smoothScrollContext
-    : defaultScrollSmoothContextValue;
+  const parsedContext = hasContextOptions ? smoothScrollContext : defaultScrollSmoothContextValue;
 
   return parsedContext;
 };

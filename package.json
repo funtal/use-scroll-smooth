@@ -3,6 +3,15 @@
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
+  "homepage": "https://github.com/funtal/use-scroll-smooth#readme",
+  "description": "React hook which gives a smooth scrolling functions to scroll to a specific element (wrapper for smooth-scroll library)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/funtal/use-scroll-smooth.git"
+  },
+  "bugs": {
+    "url": "https://github.com/funtal/use-scroll-smooth/issues"
+  },
   "files": [
     "dist",
     "src"
@@ -28,7 +37,7 @@
     }
   },
   "prettier": {
-    "printWidth": 80,
+    "printWidth": 100,
     "semi": true,
     "singleQuote": true,
     "trailingComma": "es5"
@@ -52,7 +61,7 @@
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.5",
     "@types/smooth-scroll": "^16.1.1",
-    "husky": "^8.0.1",
+    "husky": "4.3.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "size-limit": "^7.0.8",
@@ -62,5 +71,15 @@
   },
   "dependencies": {
     "smooth-scroll": "^16.1.3"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
+  "resolutions": {
+    "**/@typescript-eslint/eslint-plugin": "^5.4.0",
+    "**/@typescript-eslint/parser": "^5.4.0",
+    "**/jest": "^27.3.1",
+    "**/ts-jest": "^27.0.7",
+    "**/typescript": "^4.4.4"
   }
 }

@@ -1,5 +1,4 @@
 import { RefObject, useEffect, useState } from 'react';
-
 import SmoothScroll, { Options as IOptions } from 'smooth-scroll';
 
 import { useSmoothScrollContext } from '..';
@@ -42,11 +41,7 @@ export const useScrollSmooth = (options?: IOptions) => {
     });
   };
 
-  const scrollToSectionById = (
-    id: string,
-    toggle?: Element | null,
-    options?: IOptions
-  ) => {
+  const scrollToSectionById = (id: string, toggle?: Element | null, options?: IOptions) => {
     const anchorElement = document.getElementById(id);
 
     animateScroll(anchorElement, toggle, options);
