@@ -1,12 +1,14 @@
 import 'react-app-polyfill/ie11';
+
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Thing } from '../.';
+
+import { ExampleWithoutProvider } from './example-without-provider';
 
 const App = () => {
   return (
     <div>
-      <Thing />
+      <ExampleWithoutProvider />
     </div>
   );
 };

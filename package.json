@@ -4,7 +4,7 @@
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "homepage": "https://github.com/funtal/use-scroll-smooth#readme",
-  "description": "React hook which gives a smooth scrolling functions to scroll to a specific element (wrapper for smooth-scroll library)",
+  "description": "React hook which gives a smooth scrolling functions (wrapper for smooth-scroll library)",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/funtal/use-scroll-smooth.git"

@@ -27,11 +27,11 @@ export const useScrollSmooth = (options?: IOptions) => {
   }, []);
 
   const animateScroll = (
-    element: HTMLElement | null | undefined,
+    element: HTMLElement | number | null | undefined,
     toggle?: Element | null,
     options?: IOptions
   ) => {
-    if (!element || !instance) {
+    if (element === null || element === undefined || !instance) {
       return;
     }
 
@@ -53,6 +53,11 @@ export const useScrollSmooth = (options?: IOptions) => {
     options?: IOptions
   ) => animateScroll(ref?.current, toggle, options);
 
+  const scrollTo = (position: number, toggle?: Element | null, options?: IOptions) =>
+    animateScroll(position, toggle, options);
+
+  const scrollTop = (toggle?: Element | null, options?: IOptions) => scrollTo(0, toggle, options);
+
   const cancelScroll = (noEvent?: boolean | undefined) => {
     if (!instance) {
       return;
@@ -62,6 +67,8 @@ export const useScrollSmooth = (options?: IOptions) => {
   };
 
   return {
+    scrollTo,
+    scrollTop,
     cancelScroll,
     animateScroll,
     scrollToSectionById,
