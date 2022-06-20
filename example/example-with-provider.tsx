@@ -4,11 +4,11 @@ import { useScrollSmooth, ScrollSmoothProvider } from '../src';
 
 const ExampleWithProviderDemo = () => {
   const ref = React.useRef<HTMLDivElement>(null);
-  const { scrollToSectionByRef, scrollTop } = useScrollSmooth();
+  const { scrollToSectionByRef, scrollToTop } = useScrollSmooth();
 
   const handleClick = () => scrollToSectionByRef(ref);
 
-  const handleScrollToTop = () => scrollTop();
+  const handleScrollToTop = () => scrollToTop();
 
   return (
     <div>

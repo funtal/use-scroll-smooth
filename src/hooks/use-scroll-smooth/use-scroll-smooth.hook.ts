@@ -1,20 +1,20 @@
 import { RefObject, useEffect, useState } from 'react';
-import SmoothScroll, { Options as IOptions } from 'smooth-scroll';
+import { Options as IOptions } from 'smooth-scroll';
 
 import { useSmoothScrollContext } from '..';
 
-const getSmoothScrollInstance = (): SmoothScroll => {
+const getSmoothScrollInstance = () => {
   // eslint-disable-next-line global-require
   const SmoothScroll = require('smooth-scroll');
 
   return new SmoothScroll();
 };
 
-export const useScrollSmooth = (options?: IOptions) => {
+export const useScrollSmooth = (globalToggle?: Element | null, globalOptions?: IOptions) => {
   const [instance, setInstance] = useState<SmoothScroll | null>();
 
   const smoothScrollContext = useSmoothScrollContext();
-  const mergedOptions = { ...smoothScrollContext?.options, ...options };
+  const mergedOptions = { ...smoothScrollContext?.options, ...globalOptions };
 
   useEffect(() => {
     const smoothScrollInstance = getSmoothScrollInstance();
@@ -35,7 +35,7 @@ export const useScrollSmooth = (options?: IOptions) => {
       return;
     }
 
-    instance.animateScroll(element, toggle, {
+    instance.animateScroll(element, toggle || globalToggle, {
       ...mergedOptions,
       ...options,
     });
@@ -56,7 +56,7 @@ export const useScrollSmooth = (options?: IOptions) => {
   const scrollTo = (position: number, toggle?: Element | null, options?: IOptions) =>
     animateScroll(position, toggle, options);
 
-  const scrollTop = (toggle?: Element | null, options?: IOptions) => scrollTo(0, toggle, options);
+  const scrollToTop = (toggle?: Element | null, options?: IOptions) => scrollTo(0, toggle, options);
 
   const cancelScroll = (noEvent?: boolean | undefined) => {
     if (!instance) {
@@ -68,7 +68,7 @@ export const useScrollSmooth = (options?: IOptions) => {
 
   return {
     scrollTo,
-    scrollTop,
+    scrollToTop,
     cancelScroll,
     animateScroll,
     scrollToSectionById,

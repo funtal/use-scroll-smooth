@@ -5,11 +5,11 @@ import { useScrollSmooth } from '../src';
 const SECTION_ID = 'test-section-id';
 
 export const ExampleWithoutProvider = () => {
-  const { scrollToSectionById, scrollTop } = useScrollSmooth();
+  const { scrollToSectionById, scrollToTop } = useScrollSmooth();
 
   const handleClick = () => scrollToSectionById(SECTION_ID);
 
-  const handleScrollToTop = () => scrollTop();
+  const handleScrollToTop = () => scrollToTop();
 
   return (
     <div>
